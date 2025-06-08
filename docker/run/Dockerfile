@@ -10,6 +10,10 @@ ENV BRANCH=$BRANCH
 # Copy contents of the project to /a0
 COPY ./fs/ /
 
+# Set working directory and install Node.js dependencies
+WORKDIR /a0
+RUN npm install
+
 # pre installation steps
 RUN bash /ins/pre_install.sh $BRANCH
 
